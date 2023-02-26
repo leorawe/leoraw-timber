@@ -85,7 +85,10 @@ class StarterSite extends Timber\Site {
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['main']  = new Timber\Menu('Main');
-		$context['footer'] = new TimberMenu('Footer Menu');
+		$context['footer'] = new TimberMenu('Footer');
+		$context['social'] = new TimberMenu('Social Menu');
+		$context['blog'] = new TimberMenu('Blog Menu');
+		$context['primary'] = new TimberMenu('Primary Menu');
 		$context['site']  = $this;
 		$context['is_front_page'] = is_front_page();
 		return $context;
@@ -126,7 +129,69 @@ function leoraw_timber_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
+
 add_action( 'widgets_init', 'leoraw_timber_widgets_init' );
+
+	// This theme uses wp_nav_menu() in 4 locations.
+// function leoraw_timber_register_nav_menu(){
+// 		register_nav_menus( array(
+// 	  'primary' => __( 'Primary Menu', 'leoraw_timber' ),
+// 		'blog' => __( 'Blog Menu', 'leoraw_timber' ),
+// 		'social' => __( 'Social Menu', 'leoraw_timber' ),
+// 		'footer' => __( 'Footer', 'leoraw_timber' ),
+// 		) );
+// 	}
+// add_action( 'after_setup_theme', 'leoraw_timber_register_nav_menu', 0 );
+
+function leoraw_timber_customize_register( $wp_customize ) {
+   //All our sections, settings, and controls will be added here
+	  $wp_customize->add_section('leoraw_timber_banner_image-section', array(
+        'title' => 'Banner Image'
+    ));
+
+    $wp_customize->add_setting('leoraw_timber_banner_image-display', array(
+        'default' => 'No'
+    ));
+
+    $wp_customize->add_setting('leoraw_timber_banner_image-image');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'leoraw_timber_banner_image-control', array(
+            'label' => 'Image',
+            'section' => 'leoraw_timber_banner_image-section',
+            'settings' => 'leoraw_timber_banner_image-image',
+            'flex_width'  => true,
+            'flex_height' => true,
+            'width'       => 1500,
+            'height'      => 400,
+        )));
+
+	
+}
+add_action( 'customize_register', 'leoraw_timber_customize_register' );
+
+//  function leoraw_timber_banner_image($wp_customize) {
+//     $wp_customize->add_section('leoraw_timber_banner_image-section', array(
+//         'title' => 'Banner Image'
+//     ));
+
+//     $wp_customize->add_setting('leoraw_timber_banner_image-display', array(
+//         'default' => 'No'
+//     ));
+
+//     $wp_customize->add_setting('leoraw_timber_banner_image-image');
+
+//     $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'leoraw_timber_banner_image-control', array(
+//             'label' => 'Image',
+//             'section' => 'leoraw_timber_banner_image-section',
+//             'settings' => 'leoraw_timber_banner_image-image',
+//             'flex_width'  => true,
+//             'flex_height' => true,
+//             'width'       => 1500,
+//             'height'      => 400,
+//         )));
+// }
+
+// add_action('customize_register', 'leoraw_timber_banner_image');
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -162,6 +227,57 @@ add_action( 'widgets_init', 'leoraw_timber_widgets_init' );
 
 		add_theme_support( 'menus' );
 	}
+
+	
+// Hook to init action to register a custom post type.
+function leoraw_timber_create_custom_post_type() {
+  /*
+  * The $labels describes how the post type appears.
+  */
+  $labels = array(
+        'name'          => 'Arts', // Plural name
+        'singular_name' => 'Art'   // Singular name
+    );
+
+    /*
+     * The $supports parameter describes what the post type supports
+     */
+    $supports = array(
+        'title',        // Post title
+        'editor',       // Post content
+        'excerpt',      // Allows short description
+        'author',       // Allows showing and choosing author
+        'thumbnail',    // Allows feature images
+        'revisions',    // Shows autosaved version of the posts
+        'custom-fields' // Supports by custom fields
+    );
+
+    /*
+     * The $args parameter holds important parameters for the custom post type
+     */
+    $args = array(
+        'labels'              => $labels,
+        'description'         => 'Post type post art', // Description
+        'supports'            => $supports,
+        'taxonomies'          => array( 'post_tag' ), // Allowed taxonomies
+        'hierarchical'        => false, // Allows hierarchical categorization, if set to false, the Custom Post Type will behave like Post, else it will behave like Page
+        'public'              => true,  // Makes the post type public
+        'show_ui'             => true,  // Displays an interface for this post type
+        'show_in_menu'        => true,  // Displays in the Admin Menu (the left panel)
+        'show_in_nav_menus'   => true,  // Displays in Appearance -> Menus
+        'show_in_admin_bar'   => true,  // Displays in the black admin bar
+        'menu_position'       => 5,     // The position number in the left menu
+        'menu_icon'           => true,  // The URL for the icon used for this post type
+        'can_export'          => true,  // Allows content export using Tools -> Export
+        'has_archive'         => true,  // Enables post type archive (by month, date, or year)
+        'exclude_from_search' => false, // Excludes posts of this type in the front-end search result page if set to true, include them if set to false
+        'publicly_queryable'  => true,  // Allows queries to be performed on the front-end part if set to true
+        'capability_type'     => 'post' // Allows read, edit, delete like “Post”
+    );
+
+    register_post_type('art', $args); //Create a post type with the slug is ‘product’ and arguments in $args.
+}
+// const add_action( 'init', 'leoraw_timber_create_custom_post_type' );
 
 	/** This Would return 'foo bar!'.
 	 *
