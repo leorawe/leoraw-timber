@@ -1,0 +1,15 @@
+{% extends "views/base.twig" %}
+{% block main %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12">test
+				<h1 class="h1"><a href="{{post.link}}">{{post.title}}</a></h1>
+	{% if post.thumbnail.src %}
+		<div class="hp-flex hp-full hp-justify-between ">
+			<p class="hp-two-third">{{post.preview.length(25)}}</p>
+			<img src="{{post.thumbnail.src}}" class="hp-thumb hp-third"/>
+		</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{# Displays a post's date as HTML #}
+{% macro html_date(post, time_ago = false) %}
+	{% set meta_date = post.date('Y-m-d\\TH:i:s') %}
+	{% if time_ago == true %}
+		{% set date = post.date|time_ago %}
+	{% else %}
+		{% set date = post.date %}
+	{% endif %}
+	<time datetime="{{ meta_date }}" title="{{ post.date('Y-m-d H:i') }}">
+		{{ date }}
+	</time>
+{% endmacro html_date %}
+
+{# Displays a post's thumbnail as HTML #}
+{% macro html_thumbnail(post, width, height, classes = 'img-fluid', linked = false) %}
+	{% set thumbnail      = post.thumbnail %}
+	{% set thumbnail_url  = thumbnail.src|default(site.theme.link ~ '/images/image-not-available.jpg')|towebp(width, height) %}
+	{% set image_alt      = thumbnail.alt|default(thumbnail.name|default(thumbnail.title)) %}
+	{% if linked %}
+		<a href="{{ post.link }}">
+	{% endif %}
+	<img class="{{ classes|escape }}" src="{{ thumbnail_url }}" alt="{{ image_alt|escape }}" srcset="{{ thumbnail.srcset }}" width="{{ width }}" height="{{ height }}">
+	{% if linked %}
+		</a>
+	{% endif %}
+{% endmacro html_thumbnail %}
+
+{# Displays a Bootstrap 5 dropdown button #}
+{% macro html_dropdown_button(text, items, btn_class = '', id = '') %}
+	{% set btn_class = btn_class|default('secondary') %}
+	{% set id = id|default('dropdown-' ~ random(1, 25)) %}
+	<div class="dropdown">
+		<button class="btn btn-{{ btn_class }} dropdown-toggle" type="button" id="{{ id }}" data-bs-toggle="dropdown" aria-expanded="false">
+			{{ text }}
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="{{ id }}">
+			{% for label, url in items %}
+				<li>
+					<a class="dropdown-item" href="{{ url|escape }}">
+						{{ label }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endmacro html_dropdown_button %}
+
+{# A range slider #}
+{% macro html_range(from = 0, to = 0, label = '', id = 'range', step = 0) %}
+	{% if label is not empty %}
+		<label for="{{ id|e }}" class="form-label">
+			{{ label }}
+		</label>
+	{% endif %}
+	<input type="range" class="form-range"
+		{% if from != 0 and to != 0 %}
+			min="{{ from|int }}" max="{{ to|int }}"
+		{% endif %}
+		{% if step != 0 %}
+			step="{{ step|int }}"
+		{% endif %}
+		id="{{ id|e }}">
+{% endmacro html_range %}

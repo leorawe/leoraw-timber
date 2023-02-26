@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    <meta property="og:title" value="{{ post.title }}" />
+		<meta property="og:description" value="{{ post.excerpt }}" />
+		<meta property="og:image" value="{{ post.featured }}" />
+{% endblock %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<section class="article-content">
+				<h1 class="article-h1">{{ post.title }}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+
+			{% include 'boxes.twig' %} 
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+	
+{% endblock %}

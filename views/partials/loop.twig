@@ -1,0 +1,10 @@
+ {% block content %}
+<div>loop</div>
+	{% for post in posts %}
+  tease twigs
+	{% include 'page/view.twig' %}
+		{# {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %} #}
+	{% endfor %}
+	
+	{# {% include 'pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}
+{% endblock %}
