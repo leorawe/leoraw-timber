@@ -4,12 +4,14 @@
 
 	<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
 	{% if post.thumbnail.src %}
-		<div class="hp-flex hp-full hp-justify-between ">
-			<p class="hp-two-third">{{post.preview.length(25)}}</p>
-			<img src="{{post.thumbnail.src}}" class="hp-thumb hp-third"/>
+		<div>
+			<p>{{post.preview.length(25)}}</p>
+			<p>{{post.content}}</p>
+			<img src="{{post.thumbnail.src}}"/>
 		</div>
 	{% else %}
 		<p>{{post.preview.length(25)}}</p>
+		<p>{{post.content}}</p>
 	{% endif %}
 		
 

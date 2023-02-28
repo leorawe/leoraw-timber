@@ -23,7 +23,7 @@ if ( is_archive() ){
 
 $context          = Timber::context();
 $context['posts'] = Timber::get_posts( $wp_query );
-$templates        = [ "archive/view.twig" ];
+$templates        = [ "archive.twig" ];
 
 Timber::render(
 	$templates,

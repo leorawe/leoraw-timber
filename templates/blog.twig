@@ -1,6 +1,7 @@
-{% extends "base.twig" %}
+{% extends "base-blog.twig" %}
 
 {% block content %}
+<div class="leoraw-blog-tagline">Sketching Out Blog: Sketches of art, watercolor, photos, recipes, books, interviews, Jewish topics, and Highland Park, New Jersey</div>
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
