@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %}
-	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			<section class="article-content">
 				<h1 class="article-h1">{{ post.title }}</h1>
@@ -18,6 +17,5 @@
 			{% include 'boxes.twig' %} 
 			</section>
 		</article>
-	</div><!-- /content-wrapper -->
 	
 {% endblock %}

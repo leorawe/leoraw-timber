@@ -11,7 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $context         = Timber::context();
 $context["post"] = Timber::get_post();
-$templates        = array('single.twig' );
+if ( is_singular( 'art' ) ) {
+	$templates        = array('single-art.twig' );
+}
+else {
+	$templates        = array('single.twig' );
+}
 
 Timber::render(
 	$templates,

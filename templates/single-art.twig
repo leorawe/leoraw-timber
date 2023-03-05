@@ -1,4 +1,4 @@
-{% extends "base.twig" %}
+{% extends "base-art.twig" %}
 {% import 'partial/macros.twig' as macros %}
 {% block head %}
     <meta property="og:title" value="{{ post.title }}" />
@@ -12,7 +12,7 @@
 			<div class="article-header"><img src="{{ post.thumbnail.src|resize(1200, 300) }}"></div>
 			<section class="article-content">
 				<h1 class="article-h1">{{ post.title }}</h1>
-				<div class="article-body">single-art.twig
+				<div class="article-body">
 					{{post.content}}
 				</div>
 				<div class="article-entry-footer">{{ macros.post_terms( post ) }}</div>
