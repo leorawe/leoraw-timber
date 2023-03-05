@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+{% import 'partial/macros.twig' as macros %}
+{% block head %}
+    <meta property="og:title" value="{{ post.title }}" />
+		<meta property="og:description" value="{{ post.excerpt }}" />
+		<meta property="og:image" value="{{ post.featured }}" />
+{% endblock %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<div class="article-header"><img src="{{ post.thumbnail.src|resize(1200, 300) }}"></div>
+			<section class="article-content">
+				<h1 class="article-h1">{{ post.title }}</h1>
+				<div class="article-body">single-art.twig
+					{{post.content}}
+				</div>
+				<div class="article-entry-footer">{{ macros.post_terms( post ) }}</div>
+
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}
