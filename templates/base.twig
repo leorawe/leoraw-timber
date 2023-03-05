@@ -61,14 +61,17 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
-			{% include "menu.twig" with {'items': social.get_items} %}
+			<footer id="footer" class="leoraw-footer site-footer">
+			<div class="container">
+			<p>&copy; {{"now"|date('Y')}} All images and text ©Leora Wenger (unless otherwise noted) </p>
+			<div class="menu-social-menu-container">{% include "menu.twig" with {'items': social.get_items} %}</div>
 				{% include 'footer.twig' %}
 				{% if sidebar %}
 				<aside class="layout-sidebar">
 					{{sidebar}}
 				</aside>
 				{% endif %}
+				</div>
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
