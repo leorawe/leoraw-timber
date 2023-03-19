@@ -847,6 +847,22 @@ object {
   display: block;
 }
 
+/* MARGINS, PADDING
+=======================*/
+.m-0 {
+  margin: 0;
+}
+
+/* FLEX STYLES
+=======================*/
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 /*LAYOUT for blog
 ====================*/
 
