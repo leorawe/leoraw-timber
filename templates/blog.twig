@@ -1,12 +1,10 @@
 {% extends "base-blog.twig" %}
 
 {% block content %}
-<div class="leoraw-blog-tagline">Sketching Out Blog: Sketches of art, watercolor, photos, recipes, books, interviews, Jewish topics, and Highland Park, New Jersey</div>
-	<div class="flex">
+
 	<div>{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}</div>
-	{% include 'sidebar.twig' %}
-	</div>
+
 	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}

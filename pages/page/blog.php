@@ -28,4 +28,5 @@ if ( ! defined( 'ABSPATH' ) ){
 		'paged' => $paged
 	);
 	$context['posts'] = new Timber\PostQuery($args);
+	$context['sidebar'] = Timber::get_widgets('sidebar-1');
 	Timber::render('blog.twig', $context);

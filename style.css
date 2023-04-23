@@ -873,10 +873,29 @@ object {
 }
 
 .content-wrapper, .banner {
-  width: 960px;
   margin: 0 auto;
 }
 
+.banner {
+  width: 960px;
+}
+
+.content-wrapper{
+  width: 940px;
+}
+
+.leoraw-posts {
+  width: 640px;
+}
+
+.leoraw-sidebar {
+  width: 300px;
+}
+
+.layout-sidebar li{
+  display: inline-block;
+}
+/* 
 .site-main {
   margin: 0 25% 0 0;
   padding-left: 20px;
@@ -891,7 +910,7 @@ object {
 .site-footer {
   clear: both;
   width: 100%;
-}
+} */
 
 .leoraw-blog-tagline {
   font-style: italic;

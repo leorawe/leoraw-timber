@@ -22,18 +22,20 @@
 						{% include "menu.twig" with {'items': blog.get_items} %}
 					</nav><!-- #nav -->
 				</div>
+				<div class="leoraw-blog-tagline">Sketching Out Blog: Sketches of art, watercolor, photos, recipes, books, interviews, Jewish topics, and Highland Park, New Jersey</div>
+
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
+		<section id="content" role="main" class="content-wrapper flex">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
+			<div class="wrapper {{sidebar_class}} leoraw-posts">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
 			</div>
 			{% if sidebar %}
-				<aside class="layout-sidebar">
+				<aside class="layout-sidebar leoraw-sidebar">
 					{{sidebar}}
 				</aside>
 			{% endif %}
@@ -42,11 +44,6 @@
 		{% block footer %}
 			<footer id="footer">
 				{% include 'footer.twig' %}
-				{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-				{% endif %}
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
