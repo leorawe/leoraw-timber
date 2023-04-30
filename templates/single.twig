@@ -10,14 +10,26 @@
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 				
-				<section class="article-content">
+		<section class="article-content">
 					<h1 class="article-h1">{{ post.title }}</h1>
 					<div class="article-body">
 						{{post.content}}
 					</div>
 					<div class="article-entry-footer">{{ macros.post_terms( post ) }}</div>
 
-				</section>
+		</section>  
+		<div class="comments">
+		<h2>Please leave a comment! I love to hear from you.</h2>
+   		 {% for comment in post.comments %}
+	
+      <article class="comment" id="comment-{{ comment.id }}">
+      	<h5 class="comment-author">{{ comment.author.name }} says</h5>
+        {{ comment.content }}
+      </article>
+    {% endfor %}
+    {{ function('comment_form') }}
+  </div>
+
 		</article>
 	</div><!-- /content-wrapper -->
 	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}

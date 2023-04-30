@@ -1890,13 +1890,6 @@ ul.children li {
     width: 320px;
   }
 
-  .content-wrapper {
-    width: 940px;
-  }
-
-  .banner {
-    width: 960px;
-  }
 }
 
 @media screen and (min-width: 960px) {
@@ -1904,4 +1897,14 @@ ul.children li {
     width: 842px;
     height: 168px;
   }
+
+  .content-wrapper {
+    margin-top: 20px;
+    width: 960px;
+  }
+
+  .banner {
+    width: 960px;
+  }
+
 }
