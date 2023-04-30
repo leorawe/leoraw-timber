@@ -1907,4 +1907,8 @@ ul.children li {
     width: 960px;
   }
 
+  .post-type-post {
+    max-width: 620px;
+  }
+
 }

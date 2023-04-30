@@ -1,8 +1,8 @@
 <div class="leoraw-boxes-container">
 {% set boxes = post.meta('box_repeater') %} 
+
   {% for box in boxes %}
   <div class="leoraw-box-wrap"><div class="leoraw-box">
-  {# {{ dump(box)}} #}
     <div class="leoraw-image-container">
       <img src="{{ box.image_boxed.url }}" class="hp-thumb-class" alt="{{ box.box_title }}" />
     </div>
