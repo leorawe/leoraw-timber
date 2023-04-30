@@ -200,10 +200,17 @@ function leoraw_timber_customize_register( $wp_customize ) {
             'width'       => 1500,
             'height'      => 400,
         )));
-
 	
 }
 add_action( 'customize_register', 'leoraw_timber_customize_register' );
+
+/**
+ * Enqueue a script
+ */
+function leoraw_timber_enqueue_scripts() {
+	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), true );
+}
+add_action( 'wp_enqueue_scripts', 'leoraw_timber_enqueue_scripts' );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

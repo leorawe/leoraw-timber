@@ -882,6 +882,7 @@ object {
 
 .content-wrapper{
   width: 100%;
+  padding: 0 20px;
 }
 
 .leoraw-posts {
@@ -913,7 +914,7 @@ object {
 }
 
 .page .site-main {
-  margin: 0;
+  margin: 0 auto;
   padding-left: 0;
 }
 
@@ -1105,7 +1106,7 @@ a:hover {
 }
 
 @media (min-width: 769px) {
-  .site-branding-text {
+  .site-branding-text, .site-description {
     text-align: right;
     padding-right: 20px;
   }
@@ -1194,6 +1195,7 @@ top NAVIGATION - pages, home page
 .navigation-top {
   margin: 0 auto;
   width: 100%;
+  height: auto;
 }
 
 .navigation-top .wrap .mobile-button-wrapper {
@@ -1871,6 +1873,31 @@ ul.children li {
   max-height: 120px;
 }
 
+.mobile-button-wrapper {
+  width: 100%;
+}
+
+
+#site-navigation {
+  display: none;
+}
+
+#site-navigation .menu-primary-menu-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+#site-navigation .menu-primary-menu-container ul {
+  display: flex;
+  flex-direction: column;
+}
+
+#site-navigation .menu-primary-menu-container ul li {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
 
 
@@ -1893,6 +1920,31 @@ ul.children li {
 }
 
 @media screen and (min-width: 960px) {
+  .navigation-top {
+    height: 50px;
+  }
+  #upper-wrap {
+    display: flex;
+  }
+
+  #site-navigation {
+    display: block;
+  }
+
+  #site-navigation .menu-primary-menu-container {
+    padding-top: 0;
+  }
+
+  #site-navigation .menu-primary-menu-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  #site-navigation .menu-primary-menu-container ul li {
+    width: auto;
+  }
+
   #headerspot img {
     width: 842px;
     height: 168px;
