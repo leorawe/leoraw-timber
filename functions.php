@@ -1,6 +1,6 @@
 <?php
 /**
- * Timber starter-theme
+ * Leoraw Timber 
  * https://github.com/timber/starter-theme
  *
  * @package  WordPress
@@ -65,6 +65,7 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_filter( 'avatar_defaults', 'leoraw_timber_gravatar');
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -256,6 +257,15 @@ add_action( 'customize_register', 'leoraw_timber_customize_register' );
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
 		return $twig;
+	}
+
+	/*AVATAR
+	=========================*/
+	
+	public function leoraw_timber_gravatar ($avatar_defaults) {
+		$myavatar = get_bloginfo('template_directory') . '/images/stars.jpg';
+		$avatar_defaults[$myavatar] = "Leoraw Blog Avatar";
+		return $avatar_defaults;
 	}
 
 }

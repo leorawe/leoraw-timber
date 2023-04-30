@@ -894,23 +894,8 @@ object {
 
 .layout-sidebar li{
   display: inline-block;
+  width: 320px;
 }
-/* 
-.site-main {
-  margin: 0 25% 0 0;
-  padding-left: 20px;
-}
-
-.site-content .widget-area {
-  float: right;
-  overflow: hidden;
-  width: 25%;
-}
-
-.site-footer {
-  clear: both;
-  width: 100%;
-} */
 
 .leoraw-blog-tagline {
   font-style: italic;
