@@ -16,11 +16,22 @@
 						<div id="headerspot">
 							<a href="/"><img src="{{theme.path}}/images/sketching-out.jpeg" width="982" height="192" alt="Sketching Out Blog, leoraw dot com"></a>
 						</div>
-
+						
+							<nav id="mobile-menu" class="page-navigation" role="navigation" aria-label+"Primary Menu">
+									{% include "menu.twig" with {'items': primary.get_items} %}
+							</nav>
 					</div>
 					<nav id="nav-main" class="main-navigation" role="navigation">
 						{% include "menu.twig" with {'items': blog.get_items} %}
 					</nav><!-- #nav -->
+				</div>
+				<div class="mobile-button-wrapper">
+								<button type="button" class="button navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-controls="top-menu" aria-expanded="false" id="leoraw-button">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
 				</div>
 				<div class="leoraw-blog-tagline">Sketching Out Blog: Sketches of art, watercolor, photos, recipes, books, interviews, Jewish topics, and Highland Park, New Jersey</div>
 

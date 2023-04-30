@@ -22,6 +22,11 @@
 								<span class="icon-bar"></span>
 							</button>
 						</div>
+							<nav id="mobile-menu" class="page-navigation" role="navigation" aria-label+"Primary Menu">
+								<div class="menu-primary-menu-container">
+									{% include "menu.twig" with {'items': primary.get_items} %}
+								</div>
+							</nav>
 						  <nav id="site-navigation" class="page-navigation" role="navigation" aria-label+"Primary Menu">
 								<div class="menu-primary-menu-container">
 								{% include "menu.twig" with {'items': primary.get_items} %}

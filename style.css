@@ -1124,7 +1124,7 @@ a:hover {
 #headerspot {
   margin: 0;
   padding: 0;
-  height: 168px;
+  height: auto;
 }
 
 #headerspot a:hover {
@@ -1875,31 +1875,41 @@ ul.children li {
 
 .mobile-button-wrapper {
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
-
 
 #site-navigation {
   display: none;
 }
 
-#site-navigation .menu-primary-menu-container {
+#mobile-menu .menu-primary-menu-container {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   padding-top: 50px;
 }
 
-#site-navigation .menu-primary-menu-container ul {
+#mobile-menu .menu-primary-menu-container ul {
   display: flex;
   flex-direction: column;
+  list-style: none;
 }
 
-#site-navigation .menu-primary-menu-container ul li {
+
+#mobile-menu .menu-primary-menu-container ul li, #mobile-menu ul {
   width: 100%;
+  display: flex;
+}
+
+#mobile-menu ul li{
+  width: 100%;
+  list-style: none;
+  border-bottom: 1px solid #e9e9e9;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-
 
   .leoraw-box-wrap {
     width: 30%;
@@ -1920,6 +1930,9 @@ ul.children li {
 }
 
 @media screen and (min-width: 960px) {
+  #mobile-menu {
+    display: none;
+  }
   .navigation-top {
     height: 50px;
   }
