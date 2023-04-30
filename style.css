@@ -877,24 +877,24 @@ object {
 }
 
 .banner {
-  width: 960px;
+  width: 100%;
 }
 
 .content-wrapper{
-  width: 940px;
+  width: 100%;
 }
 
 .leoraw-posts {
-  width: 640px;
+  width: 100%;
 }
 
 .leoraw-sidebar {
-  width: 300px;
+  width: 100%;
 }
 
 .layout-sidebar li{
   display: inline-block;
-  width: 320px;
+  width: 100%;
 }
 
 .leoraw-blog-tagline {
@@ -1114,9 +1114,9 @@ a:hover {
 /*HEADER for blog
 ===========================*/
 #headerspot img {
-  width: 100%;
-  height: 100%;
-  max-width: 842px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
   max-height: 168px;
 }
 
@@ -1872,8 +1872,36 @@ ul.children li {
 }
 
 @media screen and (min-width: 768px) {
+
+
   .leoraw-box-wrap {
     width: 30%;
   }
+
+  .leoraw-posts {
+    width: 640px;
+  }
+
+  .leoraw-sidebar {
+    width: 320px;
+  }
+
+  .layout-sidebar li{
+    width: 320px;
+  }
+
+  .content-wrapper {
+    width: 940px;
+  }
+
+  .banner {
+    width: 960px;
+  }
 }
 
+@media screen and (min-width: 960px) {
+  #headerspot img {
+    width: 842px;
+    height: 168px;
+  }
+}
