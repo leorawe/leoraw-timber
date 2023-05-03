@@ -197,8 +197,14 @@ class StarterSite extends Timber\Site {
  */
 function leoraw_timber_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'leoraw Timber Footer', 'leoraw_timber' ),
+		'name'          => __( 'leoraw Timber Sidebar Blog', 'leoraw_timber' ),
 		'id'            => 'sidebar-1',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'leoraw Timber Sidebar Art', 'leoraw_timber' ),
+		'id'            => 'sidebar-2',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );

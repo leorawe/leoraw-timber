@@ -13,6 +13,7 @@ $context         = Timber::context();
 $context["post"] = Timber::get_post();
 
 if ( is_singular( 'art' ) ) {
+	$context['sidebar2'] = Timber::get_widgets('sidebar-2');
 	Timber::render('single-art.twig', $context);
 }
 else {
