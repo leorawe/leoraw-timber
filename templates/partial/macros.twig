@@ -19,6 +19,15 @@
 			{% endfor %}
 		</span>
 		{% endif %}
+
+		{% if post.terms('artcat') %}
+		<span class="artcat-links">
+			Tagged:
+			{% for term in post.terms('artcat') %}
+				<a href="{{ term.link }}" title="View all posts tagged {{ term.name }}" rel="category tag">{{ term.name }}</a>{% if loop.last == false %},{% endif %} 		
+			{% endfor %}
+		</span>
+		{% endif %}
 		
 	</div>
 

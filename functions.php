@@ -66,6 +66,7 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_filter( 'avatar_defaults', 'leoraw_timber_gravatar');
+		// add_action( 'init', 'leoraw_timber_artcat_taxonomy' );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -98,7 +99,7 @@ class StarterSite extends Timber\Site {
         'labels'              => $labels,
         'description'         => 'Post type post art', // Description
         'supports'            => $supports,
-        'taxonomies'          => array( 'post_tag', 'artcats' ), // Allowed taxonomies
+        'taxonomies'          => array( 'artcats' ), // Allowed taxonomies
         'hierarchical'        => false, // Allows hierarchical categorization, if set to false, the Custom Post Type will behave like Post, else it will behave like Page
         'public'              => true,  // Makes the post type public
         'show_ui'             => true,  // Displays an interface for this post type
@@ -120,7 +121,7 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
-		function leoraw_timber_artcats_taxonomy() {
+
 			$labels = array(
 				'name' => _x( 'Art Tags', 'taxonomy general name' ),
 				'singular_name' => _x( 'Art Tag', 'taxonomy singular name' ),
@@ -132,23 +133,21 @@ class StarterSite extends Timber\Site {
 				'update_item' => __( 'Update Art Tag' ),
 				'add_new_item' => __( 'Add New Art Tag' ),
 				'new_item_name' => __( 'New Art Tag Name' ),
-				'menu_name' => __( 'artcats' ),
+				'menu_name' => __( 'artcat' ),
 			  );    
 			  
 			// Now register the taxonomy
-			  register_taxonomy('artcats', 'arts', array(
+			  register_taxonomy('artcat', array('art'), array(
 				'hierarchical' => false,
-				'labels' => $labels,
+				'label' => __( 'Art Tags' ),
 				'show_ui' => true,
 				'show_in_rest' => true,
 				'show_admin_column' => true,
 				'query_var' => true,
 				'rewrite' => array( 'slug' => 'artcat' ),
 			  ));
-		}
-		add_action( 'init', 'leoraw_timber_artcats_taxonomy' );
+
 	}
-	
 
 	/** This is where you add some context
 	 *
