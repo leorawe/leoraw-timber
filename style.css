@@ -1926,6 +1926,7 @@ ul.children li {
   .layout-sidebar li{
     width: 320px;
   }
+  
 
 }
 
@@ -1966,14 +1967,29 @@ ul.children li {
   .content-wrapper {
     margin-top: 20px;
     width: 960px;
+    padding: 0;
   }
 
   .banner {
     width: 960px;
   }
 
-  .post-type-post {
+  .post-type-post, .art-content {
     max-width: 620px;
+  }
+
+  .art-content.wrap {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .art-content .layout-sidebar li{
+    width: 280px;
+    margin-left: 20px;
+  }
+
+  .art-content .wrapper {
+    width: 620px;
   }
 
 }
