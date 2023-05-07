@@ -99,7 +99,7 @@ class StarterSite extends Timber\Site {
         'labels'              => $labels,
         'description'         => 'Post type post art', // Description
         'supports'            => $supports,
-        'taxonomies'          => array( 'artcats' ), // Allowed taxonomies
+        'taxonomies'          => array( 'artcat' ), // Allowed taxonomies
         'hierarchical'        => false, // Allows hierarchical categorization, if set to false, the Custom Post Type will behave like Post, else it will behave like Page
         'public'              => true,  // Makes the post type public
         'show_ui'             => true,  // Displays an interface for this post type
