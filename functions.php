@@ -139,7 +139,7 @@ class StarterSite extends Timber\Site {
 			// Now register the taxonomy
 			  register_taxonomy('artcat', array('art'), array(
 				'hierarchical' => false,
-				'label' => __( 'Art Tags' ),
+				'label' => __( 'Art Tags: ' ),
 				'show_ui' => true,
 				'show_in_rest' => true,
 				'show_admin_column' => true,
