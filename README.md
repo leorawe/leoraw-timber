@@ -1,5 +1,3 @@
-
-
 leoraw_timber theme
 ===
 
