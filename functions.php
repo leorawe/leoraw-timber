@@ -66,7 +66,6 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_filter( 'avatar_defaults', 'leoraw_timber_gravatar');
-		// add_action( 'init', 'leoraw_timber_artcat_taxonomy' );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -116,7 +115,6 @@ class StarterSite extends Timber\Site {
     );
 
     register_post_type('art', $args); //Create a post type with the slug is ‘product’ and arguments in $args.
-
 
 	}
 	/** This is where you can register custom taxonomies. */

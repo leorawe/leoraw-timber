@@ -5,7 +5,8 @@
 	<section class="comment-box">
 		
 		<!-- comment form -->
-		{% include "comment-form.twig" %}
+		<button id="replybutton" onclick="replybutton(this)">Reply</button>
+		<div style="display:none">{% include "comment-form.twig" %}</div>
 		<!-- child comments -->
 		{% if post.comments %}
 			<div class="comments">
@@ -17,3 +18,9 @@
 
 	</section>
 </div>
+<script>
+function replybutton(btn) {
+  btn.nextElementSibling.style.display = "block";
+  btn.style.display = "none"
+  }
+</script>

@@ -21,10 +21,6 @@
 		<div class="comments">
    		 {% for comment in post.comments %}
 					{% include 'comment.twig' %}
-      {# <article class="comment" id="comment-{{ comment.id }}">
-      	<h5 class="comment-author">{{ comment.author.name }} says</h5>
-        {{ comment.content }}
-      </article> #}
     {% endfor %}
 		<h3>Please leave a comment! I love to hear from you.</h3>
     {{ function('comment_form') }}
