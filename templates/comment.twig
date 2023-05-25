@@ -5,7 +5,7 @@
 	<section class="comment-box">
 		
 		<!-- comment form -->
-		<button id="replybutton" onclick="replybutton(this)">Reply</button>
+		<a id="replybutton" onclick="replybutton(this)">Reply</a>
 		<div style="display:none">{% include "comment-form.twig" %}</div>
 		<!-- child comments -->
 		{% if post.comments %}

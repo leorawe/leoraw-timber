@@ -784,6 +784,12 @@ ul.children li {
   margin-bottom: 10px;
 }
 
+.comment-form.reply-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
