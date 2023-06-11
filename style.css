@@ -1227,7 +1227,6 @@ h3.widget-title {
   padding: 6px 0;
   list-style: none;
   clear: both;
-  border-top: solid 1px #eee;
 }
 
 .widget li a,
@@ -1928,17 +1927,24 @@ button.cupid-blue:active {
   }
 
   .leoraw-posts {
-    width: 640px;
+    width: 620px;
   }
 
-  .leoraw-sidebar {
-    width: 320px;
+  .leoraw-posts .content-wrapper {
+    width: 620px;
   }
 
-  .layout-sidebar li{
+  .blog .content-wrapper, .single .content-wrapper, .archive .content-wrapper {
+    justify-content: space-between;
+  }
+
+  .page .content-wrapper {
+    width: 960px;
+  }
+
+  .layout-sidebar li, .leoraw-sidebar{
     width: 320px;
   }
-  
 
 }
 
@@ -1978,12 +1984,15 @@ button.cupid-blue:active {
 
   .content-wrapper {
     margin-top: 20px;
-    width: 960px;
     padding: 0;
   }
 
   .banner {
     width: 960px;
+  }
+
+  .widget li {
+      max-width: 280px;
   }
 
   .post-type-post, .art-content {
@@ -1993,15 +2002,15 @@ button.cupid-blue:active {
   .art-content.wrap {
     max-width: 960px;
     margin: 0 auto;
-  }
-
-  .art-content .layout-sidebar li{
-    width: 280px;
-    margin-left: 20px;
+    justify-content: space-between;
   }
 
   .art-content .wrapper {
     width: 620px;
   }
 
+  .art-content .layout-sidebar {
+      width: 320px;
+      margin-left: 0;
+    }
 }

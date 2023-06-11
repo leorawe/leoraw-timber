@@ -9,14 +9,6 @@ if ( ! defined( 'ABSPATH' ) ){
 	die( 'Direct access to theme files is not allowed.' );
 }
 
-// $context         = Timber::context();
-// $context["post"] = Timber::get_post();
-// $templates        = array('blog.twig' );
-
-// Timber::render(
-// 	$templates,
-// 	$context
-// );
 	global $paged;
 	if (!isset($paged) || !$paged){
 		$paged = 1;
