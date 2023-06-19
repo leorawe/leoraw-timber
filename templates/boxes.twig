@@ -3,10 +3,13 @@
 
   {% for box in boxes %}
   <div class="leoraw-box-wrap"><div class="leoraw-box">
+    
+    <h2 class="leoraw-box-title"><a class="button" href="{{ box.link.url }}">{{ box.box_title }}</a></h2>
+    {% if box.image_boxed.url %}
     <div class="leoraw-image-container">
       <img src="{{ box.image_boxed.url }}" class="hp-thumb-class" alt="{{ box.box_title }}" />
     </div>
-    <h2><a class="button" href="{{ box.link.url }}">{{ box.box_title }}</a></h2>
+    {% endif %}
     <div class="leoraw-box-text">{{ box.box_text_area }}</div>
     </div></div>
   {% endfor %}

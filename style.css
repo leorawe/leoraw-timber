@@ -1802,6 +1802,10 @@ button.cupid-blue:active {
   padding-top: 10px;
 }
 
+.home.page h2 {
+  margin-top: 0;
+}
+
 .home.page .entry-content {
   margin: 0;
 }
@@ -1997,6 +2001,10 @@ button.cupid-blue:active {
 
   .post-type-post, .art-content {
     max-width: 620px;
+  }
+
+  .post-type-page {
+    padding: 0 20px;
   }
 
   .art-content.wrap {
