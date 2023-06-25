@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $context           = Timber::context();
 $context["author"] = Timber::get_user();
-$templates         = [ "view.twig" ];
+$templates         = [ "page.twig" ];
 
 Timber::render(
 	$templates,

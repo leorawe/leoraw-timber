@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $context               = Timber::context();
 $context["attachment"] = Timber::get_post();
-$templates             = [ "attachment/view.twig" ];
+$templates             = [ "page.twig" ];
 
 Timber::render(
 	$templates,

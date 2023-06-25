@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $context          = Timber::context();
 $context["posts"] = Timber::get_posts( 's=' . get_search_query() );
-$templates        = [ "search/view.twig" ];
+$context['sidebar'] = Timber::get_widgets('sidebar-1');
+$templates        = array('search.twig' );
 
 Timber::render(
 	$templates,
-	$context,
-	
+	$context
 );
