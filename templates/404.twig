@@ -3,4 +3,9 @@
 {% block content %}
 	Sorry, we couldn't find what you're looking for.
 	<div><img src="{{ site.theme.link }}/images/oops.jpeg" alt="oops error 404 page does not exist try a menu" /></div>
+	{% if widgets %}
+				<aside class="leoraw-widgets">
+					<ul>{{widgets}}</ul>
+				</aside>
+	{% endif %}
 {% endblock %}

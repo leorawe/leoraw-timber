@@ -914,6 +914,14 @@ object {
   flex-wrap: wrap;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.justify-btwn {
+  justify-content: space-between;
+}
+
 /*LAYOUT for blog
 ====================*/
 
@@ -942,6 +950,11 @@ object {
 
 .leoraw-sidebar {
   width: 100%;
+}
+
+.leoraw-widgets ul {
+  list-style: none;
+  margin: 0;
 }
 
 .layout-sidebar li{

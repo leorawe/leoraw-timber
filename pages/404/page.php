@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $context   = Timber::context();
 $context['sidebar'] = Timber::get_widgets('sidebar-1');
+$context['widgets'] = Timber::get_widgets('widgets-404');
 $templates = [ "404.twig" ];
 
 Timber::render(

@@ -205,6 +205,12 @@ function leoraw_timber_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'leoraw Timber 404 Widgets', 'leoraw_timber' ),
+		'id'            => 'widgets-404',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 add_action( 'widgets_init', 'leoraw_timber_widgets_init' );
