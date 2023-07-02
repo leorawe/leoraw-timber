@@ -1931,6 +1931,10 @@ h2.site-branding-text {
   margin: 0 auto;
 }
 
+.archive .art-content.wrap h1 {
+  padding-left: 20px;
+}
+
 @media screen and (min-width: 768px) {
 
   .leoraw-box-wrap {
@@ -2018,6 +2022,10 @@ h2.site-branding-text {
     max-width: 960px;
     margin: 0 auto;
     justify-content: space-between;
+  }
+
+  .art-content.wrap h1 {
+      padding-left: 0;
   }
 
   .art-content .wrapper {
