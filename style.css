@@ -2037,6 +2037,10 @@ h2.site-branding-text {
     justify-content: space-between;
   }
 
+  .archive .art-content.wrap h1 {
+      padding-left: 0;
+  }
+
   .art-content.wrap h1 {
       padding-left: 0;
   }
