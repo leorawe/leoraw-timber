@@ -1,10 +1,10 @@
 {% if posts.pagination.pages is not empty %}
 <div class="tool-pagination flex justify-btwn">
     {% if posts.pagination.next %}
-		<a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Previous</a>
+		<span><< <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Previous</a></span>
 	{% endif %}
     {% if posts.pagination.prev %}
-		<a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Next</a>
+		<span><< <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Next</a></span>
 	{% endif %}
 </div>
 {% endif %}

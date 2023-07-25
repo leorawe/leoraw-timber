@@ -46,12 +46,12 @@
 		</header>
 
 		<section id="content" role="main" class="site-main">
-<pre>
+{# <pre>
   Current Url:  {{ dump(current_url) }}
-</pre>
-		{# {% if post.url != 'art' %} #}
+</pre> #}
+		{% if current_url != 'art' %}
 			<div class="wrap art-content breadcrumb">>&nbsp;<a href="/art">Art database</a>
-		{# {% endif %} #}
+		{% endif %}
 		<div class="wrap flex flex-wrap art-content">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
