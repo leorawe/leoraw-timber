@@ -1944,7 +1944,11 @@ h2.site-branding-text {
   margin: 0 auto;
 }
 
-.archive .art-content.wrap h1 {
+.archive .art-content h1 {
+  padding-left: 20px;
+}
+
+.breadcrumb {
   padding-left: 20px;
 }
 
@@ -2037,7 +2041,7 @@ h2.site-branding-text {
     justify-content: space-between;
   }
 
-  .archive .art-content.wrap h1 {
+  .archive .art-content h1 {
       padding-left: 0;
   }
 
@@ -2052,5 +2056,9 @@ h2.site-branding-text {
   .art-content .layout-sidebar {
       width: 320px;
       margin-left: 0;
+  }
+  
+  .breadcrumb {
+      padding-left: 0;
     }
 }

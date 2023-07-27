@@ -15,17 +15,12 @@ global $paged;
 		$paged = 1;
 	}
 
-	// $args = array(
-	// 	'post_type' => 'post',
-	// 	'posts_per_page' => 10,
-	// 	'paged' => $paged
-	// );
-
 	$context          = Timber::context();
 	$context['posts'] = Timber::get_posts( $wp_query );
 	// $context['posts'] = new Timber\PostQuery($args);
 	$context['sidebar'] = Timber::get_widgets('sidebar-1');
   $context['current_url'] = basename(Timber\URLHelper::get_current_url());
+	$context['pagination'] = Timber::get_pagination();
 	$templates = [ "archive.twig" ];
 	
 	if (is_post_type_archive('art')) {

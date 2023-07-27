@@ -1,17 +1,13 @@
-{# This file demonstrates using most of the index.twig template and modifying 
-   just a small part. See `search.twig` for an example of another approach #}
-
 {% extends "base-blog.twig" %}
 
 {% block content %}
-  
+    {# {{ dump(pagination)}} #}
   <h1>{{wp_title}}</h1>
   <div class="content-wrapper">
     {% for post in posts %}
       {% include ['tease-'~post.post_type~'.twig', 'tease-blog.twig'] %}
     {% endfor %}
 
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    {% include 'partial/pagination-archive.twig' with { pagination: pagination } %}
   </div>
-  {# {{ dump(posts) }}  #}
 {% endblock %}
