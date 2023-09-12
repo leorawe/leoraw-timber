@@ -22,10 +22,11 @@
    		 {% for comment in post.comments %}
 					{% include 'comment.twig' %}
     {% endfor %}
-		<h3>Please leave a comment! I love to hear from you.</h3>
+		{% if(post.comment_status == "open") %}<h3>Please leave a comment! I love to hear from you.</h3>{% endif %}
+
     {{ function('comment_form') }}
   </div>
-
+	
 		</article>
 	</div><!-- /content-wrapper -->
 	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
