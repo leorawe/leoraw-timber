@@ -5,12 +5,10 @@
 	<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
 	{% if post.thumbnail.src %}
 		<div>
-			<p>{{post.preview.length(25)}}</p>
 			<p>{{post.content}}</p>
 			<img src="{{post.thumbnail.src}}"/>
 		</div>
 	{% else %}
-		<p>{{post.preview.length(25)}}</p>
 		<p>{{post.content}}</p>
 	{% endif %}
 		
