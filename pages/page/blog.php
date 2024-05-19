@@ -14,12 +14,13 @@ if ( ! defined( 'ABSPATH' ) ){
 		$paged = 1;
 	}
 	$context = Timber::context();
-	$args = array(
-		'post_type' => 'post',
-		'posts_per_page' => 5,
-		'paged' => $paged
-	);
-	$context['posts'] = new Timber\PostQuery($args);
+	// $args = array(
+	// 	'post_type' => 'post',
+	// 	'posts_per_page' => 5,
+	// 	'paged' => $paged
+	// );
+	$context['posts'] = Timber::get_posts( [ 'post_type' => 'post', 'posts_per_page' => 5, 'paged' => $paged] );
+	// $context['posts'] = new Timber\PostQuery($args);
 	$context['sidebar'] = Timber::get_widgets('sidebar-1');
 	$context['current_url'] = Timber\URLHelper::get_current_url();
 	Timber::render('blog.twig', $context);

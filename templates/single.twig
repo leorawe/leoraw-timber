@@ -1,10 +1,5 @@
 {% extends "base-blog.twig" %}
 {% import 'partial/macros.twig' as macros %}
-{% block head %}
-    <meta property="og:title" value="{{ post.title }}" />
-		<meta property="og:description" value="{{ post.excerpt }}" />
-		<meta property="og:image" value="{{ post.featured }}" />
-{% endblock %}
 
 {% block content %}
 	<div class="content-wrapper">
