@@ -1,13 +1,12 @@
 {% extends "base-blog.twig" %}
 
 {% block content %}
-    {# {{ dump(pagination)}} #}
   <h1>{{wp_title}}</h1>
   <div class="content-wrapper">
     {% for post in posts %}
       {% include ['tease-'~post.post_type~'.twig', 'tease-blog.twig'] %}
     {% endfor %}
 
-    {% include 'partial/pagination-archive.twig' with { pagination: pagination } %}
+    {% include 'partial/pagination.twig' with { pagination: pagination } %}
   </div>
 {% endblock %}

@@ -177,7 +177,6 @@ class StarterSite extends Timber\Site {
 		return $context;
 	}
 
-
 	public function theme_supports() {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -252,6 +251,13 @@ function leoraw_timber_customize_register( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'leoraw_timber_customize_register' );
+
+function is_post_type($type){
+    global $wp_query;
+    if($type == get_post_type($wp_query->post->ID)) 
+        return true;
+    return false;
+}
 
 /**
  * Enqueue a script

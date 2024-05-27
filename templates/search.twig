@@ -1,8 +1,9 @@
 {# see `archive.twig` for an alternative strategy of extending templates #}
-{% extends "base-blog.twig" %}
+{% extends "base-search.twig" %}
 
 {% block content %}
   <div class="content-wrapper">
+  <h1>{{wp_title}}</h1>
     {% for post in posts %}
       {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
     {% endfor %}
