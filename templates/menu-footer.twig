@@ -1,0 +1,10 @@
+{% if primary %}
+	<ul>
+	{% for item in items %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			<div class="dropdown">{% include "menu.twig" with {'items': item.children} %}</div>
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

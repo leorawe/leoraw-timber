@@ -1,8 +1,8 @@
 <footer id="footer" class="leoraw-footer site-footer">
 	<div class="container">
 		<p>&copy; {{"now"|date('Y')}} All images and text ©Leora Wenger (unless otherwise noted) </p>
-		<div class="menu-social-menu-container">{% include "menu.twig" with {'items': social.get_items} %}</div>
-		<div class="menu-footer-container">{% include "menu.twig" with {'items': footer.get_items} %} </div>
+		<div class="menu-social-menu-container">{% include "menu-social.twig" with {'items': social.get_items} %}</div>
+		<div class="menu-footer-container">{% include "menu-footer.twig" with {'items': footer.get_items} %} </div>
 	</div>
 </footer>
 			{{ function('wp_footer') }}
