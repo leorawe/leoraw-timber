@@ -20,8 +20,7 @@ global $paged;
 $args = [ 'post_type' => 'art', 'posts_per_page' => 10, 'paged' => $paged ];
 $context['posts'] = Timber::get_posts($args);
 $context['sidebar2'] = Timber::get_widgets('sidebar-2');
-
-Timber::render('art.twig', $context);
+$templates = [ "art.twig" ];
 
 Timber::render(
 		$templates,

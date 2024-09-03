@@ -2,7 +2,7 @@
  * Theme Name: leoraw Timber
  * Description: Starter Theme to use with Timber
  * Author: Leora Wenger
- * Version: 1.0.3
+ * Version: 1.0.4
 */
 
 html {
@@ -1222,7 +1222,7 @@ SIDEBAR
 h3.widget-title {
   margin: 0;
   text-transform: uppercase;
-  background: url("images/hr_dot_black.gif") 0 100% repeat-x;
+  background: none;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
   font-size: 14px;
