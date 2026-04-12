@@ -1,15 +1,32 @@
-{% extends "base-art.twig" %}
+{% extends "base.twig" %}
 
 {% block content %}
-  <h1>{{wp_title}}</h1>
-  <div class="content-wrapper">
-    {% for post in posts %}
-      {% include ['tease-'~post.post_type~'.twig', 'tease-art.twig'] %}
-    {% endfor %}
+<div class="content-wrapper">
+  <section class="article-content">
+				<h1 class="article-h1">{{ post.title }}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+      <div class="leoraw-boxes-container">
+      {% for post in posts %}
+        <div class="leoraw-img-wrap">
+          
+          {% if post.thumbnail.src %}
+            <img src="{{post.thumbnail.src}}"/>
+            <h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
+          {% else %}
+          <h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
+          {% endif %}
+          
+        </div>
+        {% endfor %}
+      </div>
+
+</section>
 
 	{% if posts.pagination %}
     {% include 'partial/pagination.twig' with { pagination: pagination } %}
   {% endif %}
+      </div>
   </div>
-
 {% endblock %}

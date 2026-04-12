@@ -14,10 +14,11 @@ if ( ! defined( 'ABSPATH' ) ){
 		$paged = 1;
 	}
 	$context = Timber::context();
+	$context["post"] = Timber::get_post();
 	$context['posts'] = Timber::get_posts( 
 		[ 'post_type' => 'art', 
 		'artcat' => 'pottery',
 		'posts_per_page' => 9, 
 		'paged' => $paged] );
 	$context['sidebar2'] = Timber::get_widgets('sidebar-2');
-	Timber::render('art.twig', $context);
+	Timber::render('pottery.twig', $context);

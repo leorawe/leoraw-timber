@@ -2,7 +2,7 @@
  * Theme Name: leoraw Timber
  * Description: Starter Theme to use with Timber
  * Author: Leora Wenger
- * Version: 1.0.4
+ * Version: 2.0.1
 */
 
 html {
@@ -1719,6 +1719,11 @@ button.cupid-blue:active {
   border-radius: 3px;
 }
 
+.post-type-page .wp-caption {
+  border: none;
+  background-color: #ffffff;
+}
+
 .wp-caption img {
   margin: 0;
   padding: 0;
@@ -1869,11 +1874,23 @@ h2.site-branding-text {
   justify-content: space-between;
   width: 100%;
   padding: 5px;
+  padding-left: 0;
 }
 
 .leoraw-box-wrap {
   width: 100%;
   margin: 5px;
+}
+
+.leoraw-img-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.leoraw-img-wrap img {
+  height: 200px;
 }
 
 .leoraw-box {
