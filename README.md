@@ -2,9 +2,8 @@ leoraw_timber theme
 ===
 
 Based on the timber starter theme.  
+Includes art content type for art database.  
+Featuring three boxes across (on desktop) for pottery.  
+Blog has a separate theme from home page.  
 ## For www.leoraw.com. 
 
-### Looking for docs?
-* [Switch to Composer](https://timber.github.io/docs/v1/getting-started/switch-to-composer/)
-* [Timber Documentation](https://timber.github.io/docs/)
-* [Twig Reference](http://twig.sensiolabs.org/doc/templates.html)
