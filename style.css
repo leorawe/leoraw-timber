@@ -2,7 +2,7 @@
  * Theme Name: leoraw Timber
  * Description: Starter Theme to use with Timber
  * Author: Leora Wenger
- * Version: 2.0.1
+ * Version: 2.0.2
 */
 
 html {
@@ -1885,7 +1885,7 @@ h2.site-branding-text {
 .leoraw-img-wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: self-start;
   margin-bottom: 10px;
 }
 
