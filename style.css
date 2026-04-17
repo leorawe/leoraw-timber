@@ -785,6 +785,10 @@ ul.children li {
   margin-bottom: 10px;
 }
 
+.comment-box a {
+  cursor: pointer;
+}
+
 .comment-form.reply-form label {
   display: flex;
   flex-direction: column;
