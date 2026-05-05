@@ -2083,4 +2083,8 @@ h2.site-branding-text {
   .breadcrumb {
       padding-left: 0;
     }
+  
+  .leoraw-img-wrap {
+    flex: 0 0 33.3333%;
+  }
 }
