@@ -1501,6 +1501,7 @@ MAIN NAVIGATION #b9b9b9 #6a6a6a 474747
 .menu-footer-container ul {
   list-style: none;
   display: flex;
+  margin-left: 0;
 }
 
 .menu-social-menu-container ul li,
@@ -1569,10 +1570,13 @@ MAIN NAVIGATION #b9b9b9 #6a6a6a 474747
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
+  margin: 0;
+  white-space:nowrap;
 }
 
 .menu-footer-container ul li {
   padding-left: 1ch;
+  display: inline-block;
 }
 
 .menu-footer-container ul li:not(:first-child)::before {
